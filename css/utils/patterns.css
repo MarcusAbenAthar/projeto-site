@@ -146,3 +146,55 @@
   padding: 1.5rem;
   backdrop-filter: blur(4px);
 }
+
+/* === BACK TO TOP BUTTON === */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 12px var(--primary-color);
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.7);
+  z-index: 10000;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: backToTopPop 0.4s ease-out;
+  transform: scale(1);
+}
+@keyframes backToTopPop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.back-to-top:hover {
+  background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+  box-shadow: 0 0 20px var(--accent-color);
+  transform: scale(1.1);
+}
+.back-to-top:active {
+  transform: scale(0.9);
+}
+
+/* ícone SVG do botão voltar ao topo */
+.back-to-top__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.back-to-top:hover .back-to-top__icon {
+  transform: translateY(-2px);
+}
