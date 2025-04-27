@@ -20,13 +20,3 @@
   --success-color: #00C853;
   --error-color: #D50000;
 }
-
-/* Light theme override */
-html[data-theme='light'] {
-  --primary-color: #0A0A0A;
-  --secondary-color: #F5F5F5;
-  --accent-color: #FF6F00;
-  --white-color: #181818;
-  --gray-color: #4A4A4A;
-  --neutral-dark: #F5F5F5;
-}

@@ -71,20 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // === RANDOM NEON RIPPLES ===
-  setInterval(() => {
-    const ripple = document.createElement('div');
-    ripple.classList.add('neon-ripple');
-    const scrollWidth = document.documentElement.scrollWidth;
-    const scrollHeight = document.documentElement.scrollHeight;
-    const x = Math.random() * scrollWidth;
-    const y = Math.random() * scrollHeight;
-    ripple.style.left = `${x}px`;
-    ripple.style.top = `${y}px`;
-    document.body.appendChild(ripple);
-    ripple.addEventListener('animationend', () => ripple.remove());
-  }, 500);
-
   // === SCROLL REVEAL ===
   const revealEls = document.querySelectorAll('.revealable');
   const observer = new IntersectionObserver((entries, obs) => {

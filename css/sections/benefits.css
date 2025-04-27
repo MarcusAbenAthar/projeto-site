@@ -52,18 +52,6 @@
   justify-content: center;
   gap: 2rem;
 }
-.vip-benefits::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 20%, var(--accent-color) 1px, transparent 0),
-    radial-gradient(circle at 80% 80%, var(--accent-color) 1px, transparent 0);
-  background-size: 80px 80px;
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-}
 .vip-benefits__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -126,4 +114,21 @@
 @keyframes rotateCoin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* Centralizar VIP Benefits no mobile */
+@media (max-width: 600px) {
+  .vip-benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .vip-benefits__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 2rem 0 1rem;
+    gap: 2rem;
+  }
 }

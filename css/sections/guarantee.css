@@ -1,6 +1,6 @@
 /* Garantia e Contato */
 .guarantee {
-  background: linear-gradient(120deg, #191919 70%, var(--secondary-color) 100%);
+  background: var(--secondary-color);
   color: var(--white-color);
   padding: 2.5rem 1rem 2rem 1rem;
   text-align: center;
@@ -30,8 +30,8 @@
   margin-top: 1.5rem;
 }
 .guarantee__btn {
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  color: var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--neutral-light);
   padding: 0.9rem 2rem;
   border: none;
   border-radius: 30px;
@@ -41,13 +41,13 @@
   align-items: center;
   gap: 0.6rem;
   cursor: pointer;
-  box-shadow: 0 0 16px 0 var(--primary-color);
+  box-shadow: none;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
 }
 .guarantee__btn:hover {
-  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-  color: var(--white-color);
-  box-shadow: 0 0 32px 0 var(--accent-color);
+  background: var(--primary-color);
+  color: var(--neutral-light);
 }
 .guarantee__icon {
   width: 22px;

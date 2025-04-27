@@ -76,22 +76,6 @@
   display: block;
 }
 
-/* === RANDOM NEON RIPPLES === */
-.neon-ripple {
-  position: fixed;
-  width: 0;
-  height: 0;
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: ripple 1.5s ease-out forwards;
-  pointer-events: none;
-  z-index: 9998;
-}
-@keyframes ripple {
-  to { width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; border-width: 0; opacity: 0; }
-}
-
 /* === SCROLL REVEAL === */
 .revealable {
   opacity: 0;

@@ -18,3 +18,9 @@
 @import url('sections/results.css');
 @import url('sections/guarantee.css');
 @import url('responsive.css');
+
+/* === GLOBAL === */
+body {
+  background: var(--secondary-color);
+  color: var(--white-color);
+}

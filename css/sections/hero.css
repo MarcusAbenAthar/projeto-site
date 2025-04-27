@@ -98,7 +98,7 @@
 }
 
 .hero__subtitle {
-  color: var(--gray-color);
+  color: var(--neutral-light);
   font-size: 1.12rem;
   margin-bottom: 1.3rem;
   max-width: 600px;
@@ -112,46 +112,27 @@
   padding: 1.1rem 2.8rem;
   font-size: 1.22rem;
   font-weight: 700;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: var(--radius, 32px);
-  box-shadow: 0 0 28px 6px var(--primary-color), 0 2px 8px 0 #0008;
+  box-shadow: none;
   cursor: pointer;
-  transition: background 0.22s, box-shadow 0.22s, transform 0.18s, filter 0.16s;
+  transition: transform 0.18s;
   outline: none;
   margin-top: 1.2rem;
-  animation: heroCtaPulse 1.8s infinite alternate;
+  animation: none;
+  filter: none;
   text-decoration: none;
   z-index: 11;
-  filter: brightness(1) drop-shadow(0 0 8px var(--primary-color));
   position: relative;
   overflow: hidden;
-}
-.hero__cta::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 50%; height: 100%;
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-  transform: skewX(-20deg);
-}
-.hero__cta:hover::before,
-.hero__cta:focus::before {
-  animation: shimmer 2s ease;
-}
-@keyframes shimmer {
-  0% { left: -50%; }
-  100% { left: 150%; }
 }
 
 .hero__cta:hover,
 .hero__cta:focus {
-  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-  color: var(--secondary-color);
+  background: var(--primary-color);
   transform: scale(1.06) translateY(-2px) rotate(-1deg);
-  box-shadow: 0 0 48px 0 var(--accent-color);
-  filter: brightness(1.15) drop-shadow(0 0 18px var(--accent-color));
 }
 
 /* === RESPONSIVO === */
@@ -222,33 +203,6 @@
   text-shadow: 0 2px 16px var(--secondary-color);
 }
 
-.hero__cta {
-  display: inline-block;
-  padding: 1.1rem 2.8rem;
-  font-size: 1.22rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  color: #fff;
-  border: none;
-  border-radius: var(--radius, 32px);
-  box-shadow: 0 0 28px 6px var(--primary-color), 0 2px 8px 0 #0008;
-  cursor: pointer;
-  transition: background 0.22s, box-shadow 0.22s, transform 0.18s;
-  outline: none;
-  margin-top: 1.2rem;
-  animation: heroCtaPulse 1.8s infinite alternate;
-  text-decoration: none;
-  z-index: 11;
-}
-
-.hero__cta:hover,
-.hero__cta:focus {
-  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-  color: var(--secondary-color);
-  transform: scale(1.06);
-  box-shadow: 0 0 48px 0 var(--accent-color);
-}
-
 .hero__btn {
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: var(--neutral-light);
@@ -301,19 +255,6 @@
 @keyframes heroGlow {
   0% { box-shadow: 0 0 18px 0 var(--primary-color); }
   100% { box-shadow: 0 0 38px 8px var(--accent-color); }
-}
-.hero__cta:hover {
-  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-  color: var(--white-color);
-  transform: scale(1.06);
-  box-shadow: 0 0 48px 0 var(--accent-color);
-}
-/* Partículas animadas (efeito tech) */
-.hero__particles {
-  position: absolute;
-  left: 0; top: 0; width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* === HERO SUSPENSE EFFECT === */
