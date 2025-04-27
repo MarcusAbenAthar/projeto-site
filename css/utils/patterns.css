@@ -1,0 +1,148 @@
+/* utilitários futuristas: grid de fundo e tilt para cards */
+
+/* Grid background para seções */
+.futuristic-bg {
+  position: relative;
+  overflow: hidden;
+}
+.futuristic-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent 0, transparent 9px, rgba(255,255,255,0.03) 10px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 9px, rgba(255,255,255,0.03) 10px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tilt 3D para cards */
+.tilt-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.tilt-card:hover {
+  transform: perspective(600px) rotateX(6deg) rotateY(-6deg) scale(1.04);
+  box-shadow: 0 0 32px 0 rgba(255,193,7,0.6);
+}
+
+/* === NEON GRID PARALLAX === */
+:root {
+  --ng1: 0px;
+  --ng2: 0px;
+}
+.neon-grid {
+  position: relative;
+  overflow: hidden;
+}
+.neon-grid::before,
+.neon-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0, transparent 9px, rgba(255,193,7,0.03) 10px), repeating-linear-gradient(90deg, transparent 0, transparent 9px, rgba(255,193,7,0.03) 10px);
+  pointer-events: none;
+  z-index: 6;
+}
+.neon-grid::before {
+  opacity: 0.2;
+  background-size: 40px 40px;
+  background-position: 0 var(--ng1);
+}
+.neon-grid::after {
+  opacity: 0.1;
+  background-size: 80px 80px;
+  background-position: 0 var(--ng2);
+}
+
+/* === COIN CLUSTER ON HOVER === */
+.coin-cluster {
+  position: absolute;
+  font-size: 1rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 6px var(--accent-color);
+  animation: coinFloat 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+@keyframes coinFloat {
+  to { transform: translate(var(--dx), var(--dy)) scale(0.5); opacity: 0; }
+}
+
+.coin-cluster-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+/* === RANDOM NEON RIPPLES === */
+.neon-ripple {
+  position: fixed;
+  width: 0;
+  height: 0;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: ripple 1.5s ease-out forwards;
+  pointer-events: none;
+  z-index: 9998;
+}
+@keyframes ripple {
+  to { width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; border-width: 0; opacity: 0; }
+}
+
+/* === SCROLL REVEAL === */
+.revealable {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.revealable.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* === TESTIMONIALS SLIDER === */
+.testimonials {
+  padding: 4rem 1rem;
+}
+.testimonials__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.testimonials__slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+.testimonials__slider::-webkit-scrollbar {
+  display: none;
+}
+.testimonials__slider .slide {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+}

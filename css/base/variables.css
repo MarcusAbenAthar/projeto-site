@@ -1,0 +1,32 @@
+:root {
+  /* Cores principais */
+  --primary-color: #FF6F00;   /* Laranja vibrante */
+  --secondary-color: #0A0A0A; /* Preto sólido absoluto */
+  --accent-color: #FFC107;    /* Laranja amarelado para destaques */
+  --neutral-light: #FFFFFF;   /* Branco puro para contrastes */
+  --neutral-dark: #181818;    /* Preto alternativo para fundos */
+  --success-color: #00E676;
+  --danger-color: #FF1744;
+  --radius: 1.2rem;
+  --font-main: 'Inter', Arial, Helvetica, sans-serif;
+  --font-title: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif;
+  /* Cores auxiliares */
+  --accent-color: #FFC107;    /* Laranja amarelado para destaques */
+  /* Cores neutras */
+  --white-color: #FFFFFF;     /* Branco puro para contrastes */
+  --gray-color: #BDBDBD;      /* Cinza médio para textos suaves */
+  --light-gray-color: #F5F5F5;/* Cinza claro para fundo suave */
+  /* Alertas */
+  --success-color: #00C853;
+  --error-color: #D50000;
+}
+
+/* Light theme override */
+html[data-theme='light'] {
+  --primary-color: #0A0A0A;
+  --secondary-color: #F5F5F5;
+  --accent-color: #FF6F00;
+  --white-color: #181818;
+  --gray-color: #4A4A4A;
+  --neutral-dark: #F5F5F5;
+}

@@ -1,0 +1,87 @@
+/* PROBLEM SECTION CRIPTO-TECH */
+.problem {
+  background: linear-gradient(120deg, #18122b 70%, #0a0a0a 100%);
+  position: relative;
+  padding: 3.2rem 1.2rem 2.6rem 1.2rem;
+  text-align: center;
+  overflow: hidden;
+}
+.problem__glitch {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 0.5px;
+  margin-bottom: 1.1rem;
+  position: relative;
+  display: inline-block;
+  animation: glitch 1.2s infinite linear alternate-reverse;
+}
+@keyframes glitch {
+  0% { text-shadow: 2px 0 #ff00c8, -2px 0 #00fff0, 0 2px #fff, 0 -2px #ff0; }
+  20% { text-shadow: -2px 0 #ff00c8, 2px 0 #00fff0, 0 -2px #fff, 0 2px #ff0; }
+  40% { text-shadow: 2px 2px #ff00c8, -2px -2px #00fff0; }
+  60% { text-shadow: 0 2px #fff, 2px 0 #ff0; }
+  80% { text-shadow: -2px 2px #00fff0, 2px -2px #ff00c8; }
+  100% { text-shadow: 2px 0 #ff00c8, -2px 0 #00fff0, 0 2px #fff, 0 -2px #ff0; }
+}
+.problem__icon {
+  display: inline-block;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 0.7rem;
+  background: radial-gradient(circle, #ff6f00 60%, #ffc107 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 18px 4px #ff6f00cc;
+  animation: iconPulse 1.3s infinite alternate;
+  position: relative;
+}
+.problem__icon::after {
+  content: '!';
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-shadow: 0 2px 8px #000b;
+}
+@keyframes iconPulse {
+  0% { box-shadow: 0 0 8px 1px #ff6f00cc; }
+  100% { box-shadow: 0 0 28px 8px #ffc107cc; }
+}
+.problem__text {
+  color: var(--neutral-light);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 1px 8px #000a;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ Problem/Dor Section */
+.problem {
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+.problem__title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.problem__desc {
+  color: var(--gray-color);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.problem__highlight {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.15rem;
+}

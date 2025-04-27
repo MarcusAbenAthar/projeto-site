@@ -1,0 +1,79 @@
+/* FOOTER FUTURISTA */
+.footer {
+  background: linear-gradient(120deg, var(--secondary-color), #1A1A2E);
+  color: var(--neutral-light);
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+  border-top: 3px solid var(--primary-color);
+  box-shadow: 0 0 32px 0 var(--primary-color);
+}
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.footer__brand p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-color);
+}
+.footer__links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer__links a {
+  color: var(--gray-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer__links a:hover {
+  color: var(--accent-color);
+}
+.footer__social {
+  display: flex;
+  gap: 1rem;
+}
+.footer__social a {
+  color: var(--neutral-light);
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+.footer__social a:hover {
+  color: var(--accent-color);
+}
+.footer__newsletter {
+  margin-top: 1.5rem;
+}
+.footer__newsletter input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  margin-right: 0.6rem;
+  outline: none;
+  width: 200px;
+}
+.footer__newsletter button {
+  padding: 0.8rem 1.5rem;
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.footer__newsletter button:hover {
+  background: var(--primary-color);
+}
+.footer p {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--gray-color);
+}

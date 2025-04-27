@@ -1,0 +1,26 @@
+/* HEADER CRIPTO-TECH PREMIUM */
+.header {
+  width: 100vw;
+  min-height: 90px;
+  background: linear-gradient(120deg, var(--secondary-color) 60%, var(--neutral-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header__logo {
+  height: 68px;
+  width: auto;
+  filter: drop-shadow(0 0 18px var(--primary-color)) drop-shadow(0 0 8px #fff4);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.16);
+  padding: 0.5rem 1.5rem;
+  animation: headerGlow 2.5s ease-in-out infinite alternate;
+}
+@keyframes headerGlow {
+  0% { filter: drop-shadow(0 0 8px var(--primary-color)); }
+  100% { filter: drop-shadow(0 0 24px var(--primary-color)); }
+}

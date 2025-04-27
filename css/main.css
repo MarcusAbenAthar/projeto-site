@@ -1,0 +1,19 @@
+/* === LAYOUT === */
+@import url('layout/header.css');
+@import url('layout/footer.css');
+
+/* === BASE === */
+@import url('base/reset.css');
+@import url('base/variables.css');
+@import url('base/helpers.css');
+@import url('utils/gradient.css');
+@import url('utils/patterns.css');
+
+/* === SECTIONS === */
+@import url('sections/hero.css');
+@import url('sections/benefits.css');
+@import url('sections/problem.css');
+@import url('sections/authority.css');
+@import url('sections/vip.css');
+@import url('sections/results.css');
+@import url('sections/guarantee.css');

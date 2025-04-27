@@ -1,0 +1,51 @@
+/* Autoridade e Prova Social */
+.authority {
+  background: linear-gradient(120deg, var(--secondary-color) 80%, #1A1A2E 100%);
+  color: var(--white-color);
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.authority__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 0 16px 0 var(--primary-color);
+}
+.authority__name {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.authority__desc {
+  color: var(--gray-color);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.authority__badges {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.authority__badge {
+  background: rgba(255,111,0,0.1);
+  color: var(--primary-color);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 8px 0 var(--primary-color);
+}
+.authority__proof {
+  color: var(--accent-color);
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}

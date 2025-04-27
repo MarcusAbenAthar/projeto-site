@@ -1,0 +1,203 @@
+** REGRAS DE OURO **
+
+O site será hospedado em WORDPRESS então precisa ter isso sempre em mente.
+
+---
+
+## 🛠️ Tecnologias permitidas
+- **HTML5**  
+- **CSS3** (com Flexbox e Grid, sem frameworks que baguncem o código — tipo Tailwind, Bootstrap pode até ser, mas com parcimônia)  
+- **JavaScript puro (Vanilla JS)** — No máximo bibliotecas tipo **Swiper.js** pra sliders/carrosséis (leve e amigável pro WordPress).  
+
+---
+
+## 🧩 Regras de estrutura modular
+
+1. **Separar tudo em componentes**
+   - Cabeçalho (header.php), Rodapé (footer.php), Sidebar (sidebar.php).
+   - Cada seção grande (Hero, Sobre, Serviços, Portfólio, Contato) deve ser pensada como **um bloco separado**.
+
+2. **CSS Modularizado**
+   - Um arquivo CSS principal chamando parciais:
+     ```
+     /css/
+        reset.css
+        header.css
+        hero.css
+        services.css
+        footer.css
+        responsive.css
+     ```
+   - Evite CSS gigantesco e misturado. Pense: **responsabilidade única**.
+
+3. **HTML Semântico**
+   - `header`, `nav`, `section`, `article`, `footer`, etc.  
+   - Pense no SEO agora pra não chorar depois.
+
+4. **Design responsivo**
+   - Mobile First: codar primeiro para telas pequenas e depois ir crescendo.  
+   - Use **media queries** limpas:
+     ```css
+     @media (min-width: 768px) { /* Tablet */ }
+     @media (min-width: 1024px) { /* Desktop */ }
+     ```
+
+5. **Javascript só para interação**
+   - Menu hambúrguer, sliders, animações simples (tipo "scroll reveal").  
+   - Nada de frameworks pesados tipo React, Vue, etc. (WordPress não gosta de ficar carregando trambolho).
+
+6. **Evitar Dependência Excessiva**
+   - Se usar bibliotecas JS (tipo Swiper), baixe e hospede você mesmo. Nada de CDN de terceiro se puder evitar.
+
+7. **Cuidado com nomes de classes**
+   - Usa BEM (Block Element Modifier) para clareza:
+     ```
+     .menu__item--active
+     .hero__title
+     .services__card
+     ```
+
+---
+
+## 🗂️ Estrutura de pastas sugerida
+
+```
+/project-root
+│
+├── index.html        # Ou template PHP se já pensando em WP
+│
+├── /css
+│     ├── base/
+│     │     ├── reset.css
+│     │     ├── typography.css
+│     │     ├── variables.css
+│     ├── layout/
+│     │     ├── header.css
+│     │     ├── footer.css
+│     │     ├── grid.css
+│     ├── sections/
+│     │     ├── hero.css
+│     │     ├── about.css
+│     │     ├── services.css
+│     │     ├── contact.css
+│     ├── components/
+│     │     ├── button.css
+│     │     ├── card.css
+│     │     ├── form.css
+│     ├── utils/
+│     │     ├── helpers.css
+│     │     ├── animations.css
+│     ├── responsive.css
+│     └── main.css      # Importando tudo
+│
+├── /js
+│     ├── main.js       # Interações gerais (menu, sliders, etc.)
+│
+├── /img
+│     ├── logos/
+│     │     └── ps_logo.png
+│     ├── banners/
+│     │     └── banner-hero.jpg
+│     ├── galeria/
+│     │     ├── img1.jpg
+│     │     ├── img2.jpg
+│     │     ├── img3.jpg
+│     │     ├── img4.jpg
+│     │     ├── img5.jpg
+│     ├── operacoes/
+│     │     ├── op1.jpg
+│     │     ├── op2.jpg
+│     │     ├── op3.jpg
+│
+├── /fonts
+│     └── (fontes customizadas, se usar)
+│
+├── /videos
+│     └── (se usar vídeos de fundo ou institucionais)
+│
+└── README.md         # Documentação do projeto (bom pra deixar instruções básicas)
+
+---
+
+## 🔥 Dicas Visionárias
+
+- **Animações discretas** (tipo `transition`, `transform`) deixam tudo mais vivo, mas **não** exagera.
+- **Otimizar imagens** antes de subir.
+- **Acessibilidade mínima**: textos ALT nas imagens, contrastes bons, navegação simples.
+- **Preparar tudo para virar "blocos" no WordPress** (tipo ACF - Advanced Custom Fields, se for mais pró).
+- <img src="img/galeria/img1.jpg" 
+     srcset="img/galeria/img1-480w.jpg 480w, img/galeria/img1-800w.jpg 800w" 
+     sizes="(max-width: 600px) 480px, 800px" 
+     alt="Imagem da Galeria" 
+     loading="lazy">
+
+---
+
+## O main.css importa tudo bonitinho:
+
+/* === BASE === */
+@import url('base/reset.css');
+@import url('base/typography.css');
+@import url('base/variables.css');
+
+/* === LAYOUT === */
+@import url('layout/header.css');
+@import url('layout/footer.css');
+@import url('layout/grid.css');
+
+/* === SECTIONS === */
+@import url('sections/hero.css');
+@import url('sections/about.css');
+@import url('sections/services.css');
+@import url('sections/contact.css');
+
+/* === COMPONENTS === */
+@import url('components/button.css');
+@import url('components/card.css');
+@import url('components/form.css');
+
+/* === UTILS === */
+@import url('utils/helpers.css');
+@import url('utils/animations.css');
+
+/* === RESPONSIVE === */
+@import url('responsive.css');
+
+---
+
+base/: Coisas globais do site inteiro.
+
+layout/: Estrutura que se repete em todas páginas (header, footer).
+
+sections/: Cada página/seção é seu próprio módulo.
+
+components/: Micro-coisas reaproveitáveis (botões, cards, formulários).
+
+utils/: Classes de apoio e "magias" rápidas (margins extras, esconder elementos, animações).
+
+responsive.css: Adaptações para telas menores (ou pode modularizar também, tipo responsive/phone.css, responsive/tablet.css).
+
+---
+
+** Paleta de Cores **
+
+:root {
+  /* Cores principais */
+  --primary-color: #FF6F00;   /* Laranja vibrante */
+  --secondary-color: #0A0A0A; /* Preto sólido absoluto */
+  
+  /* Cores auxiliares */
+  --accent-color: #FFC107;    /* Laranja amarelado para destaques */
+  
+  /* Cores neutras */
+  --white-color: #FFFFFF;     /* Branco puro para contrastes */
+  --gray-color: #BDBDBD;      /* Cinza médio para textos suaves */
+  --light-gray-color: #F5F5F5;/* Cinza claro para fundo suave */
+
+  /* Alertas (opcional se quiser mensagens de sucesso/erro) */
+  --success-color: #00C853;
+  --error-color: #D50000;
+}
+
+---
+

@@ -1,0 +1,129 @@
+/* Benefits Section */
+.benefits {
+  background: linear-gradient(120deg, var(--secondary-color) 80%, #1A1A2E 100%);
+  color: var(--white-color);
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.benefits__card {
+  background: rgba(26,26,46,0.85);
+  border: 1px solid var(--primary-color);
+  border-radius: 18px;
+  box-shadow: 0 0 24px 0 var(--primary-color), 0 2px 8px 0 #0008;
+  padding: 2rem 1.5rem;
+  max-width: 260px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.benefits__card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 32px 0 var(--accent-color), 0 2px 8px 0 #0009;
+}
+.benefits__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  fill: var(--primary-color);
+  filter: drop-shadow(0 0 6px var(--primary-color));
+}
+.benefits__title {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.benefits__desc {
+  color: var(--gray-color);
+  font-size: 1rem;
+}
+
+/* VIP BENEFITS SECTION */
+.vip-benefits {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--secondary-color) 80%, #1A1A2E 100%);
+  color: var(--white-color);
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.vip-benefits::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, var(--accent-color) 1px, transparent 0),
+    radial-gradient(circle at 80% 80%, var(--accent-color) 1px, transparent 0);
+  background-size: 80px 80px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+.vip-benefits__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto 1rem;
+  width: 100%;
+  z-index: 1;
+}
+.vip-benefits__card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(26,26,46,0.85);
+  border: 1px solid var(--primary-color);
+  border-radius: 18px;
+  box-shadow: 0 0 24px 0 var(--primary-color), 0 2px 8px 0 #0008;
+  padding: 1rem 1rem 0.8rem 1rem;
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.vip-benefits__card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 32px 0 var(--accent-color), 0 2px 8px 0 #0009;
+}
+.vip-benefits__card::after {
+  content: '💰';
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 1.2rem;
+  color: var(--success-color);
+  text-shadow: 0 0 6px var(--success-color);
+  animation: bounceCoin 2s ease-in-out infinite;
+}
+@keyframes bounceCoin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.vip-benefits__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+}
+.vip-benefits__title {
+  position: relative;
+  display: inline-block;
+}
+.vip-benefits__title::before {
+  content: '₿';
+  position: absolute;
+  left: -1.8rem;
+  top: -0.2rem;
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 4px var(--accent-color);
+  animation: rotateCoin 6s linear infinite;
+}
+@keyframes rotateCoin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
