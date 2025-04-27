@@ -116,4 +116,9 @@
   display: inline;
   font-size: clamp(1.75rem, 5vw, 3rem) !important;
   white-space: nowrap;
+  text-shadow: 0 2px 24px var(--primary-color), 0 1px 0 #fafafa;
+  transition: text-shadow 0.32s;
+}
+.hero__text:hover {
+  text-shadow: 0 2px 24px #FFD700, 0 1px 0 #fafafa;
 }
