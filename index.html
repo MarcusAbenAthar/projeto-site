@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto $ardinha</title>
   <link rel="stylesheet" href="css/main.css?v=1.2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Projeto $ardinha",
+    "url": "https://projetosardinha.com",
+    "logo": "https://projetosardinha.com/assets/img/ps_logo.jpg"
+  }
+  </script>
 </head>
 
 <body>
+  <button class="theme-toggle" aria-label="Alternar tema">🌙</button>
   <!-- Header (modular, pronto para WordPress) -->
   <header class="header">
     <img src="assets/img/ps_logo.jpg" alt="Logo Projeto $ardinha" class="header__logo">
   </header>
   <main class="neon-grid">
     <!-- HERO SECTION -->
-    <section class="hero futuristic-bg">
+    <section class="hero futuristic-bg revealable">
       <!-- Camada 0: Imagem de fundo -->
       <img src="assets/img/img1.jpg" alt="Trading em ação" class="hero__img-bg">
       <!-- Camada 1: Partículas animadas -->
@@ -34,14 +44,14 @@
     </section>
 
     <!-- PROBLEM SECTION -->
-    <section class="problem futuristic-bg">
+    <section class="problem futuristic-bg revealable">
       <h2 class="problem__title gradient-text radial-halo">Está cansado de comprar na alta e vender na baixa?</h2>
       <p class="problem__desc">A maioria dos investidores iniciantes perdem dinheiro por falta de estratégia, excesso de
         ruído nas redes e decisões impulsivas.</p>
       <div class="problem__highlight">Você não precisa mais operar no escuro.</div>
     </section>
     <!-- AUTHORITY SECTION -->
-    <section class="authority futuristic-bg">
+    <section class="authority futuristic-bg revealable">
       <h2 class="authority__title gradient-text radial-halo">Quem está por trás do Projeto $ardinha?</h2>
       <img src="assets/img/logo_original.jpg" alt="Thiago, analista de Bitcoin e criptomoedas"
         class="authority__avatar tilt-card">
@@ -55,7 +65,7 @@
       <button class="authority__cta btn-gradient">Escolha Seu Plano</button>
     </section>
     <!-- VIP BENEFITS SECTION -->
-    <section class="vip-benefits futuristic-bg">
+    <section class="vip-benefits futuristic-bg revealable">
       <h2 class="vip-benefits__title gradient-text radial-halo">O que você recebe ao entrar no VIP</h2>
       <div class="vip-benefits__cards">
         <div class="vip-benefits__card tilt-card">
@@ -79,8 +89,27 @@
       <button class="vip-benefits__cta btn-gradient">Quero acesso agora</button>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials revealable">
+      <h2 class="testimonials__title">O que dizem nossos membros</h2>
+      <div class="testimonials__slider">
+        <div class="slide">
+          <p>"O Projeto $ardinha mudou minha forma de operar. Já recuperei 25% em um mês!"</p>
+          <span>- João, São Paulo</span>
+        </div>
+        <div class="slide">
+          <p>"Resultados incríveis com sinais precisos. Recomendo a todos."</p>
+          <span>- Maria, Rio de Janeiro</span>
+        </div>
+        <div class="slide">
+          <p>"A comunidade é incrível e o ROI não mente."</p>
+          <span>- Carlos, Belo Horizonte</span>
+        </div>
+      </div>
+    </section>
+
     <!-- REAL RESULTS SECTION -->
-    <section class="results futuristic-bg">
+    <section class="results futuristic-bg revealable">
       <h2 class="results__title gradient-text radial-halo">Resultados Reais dos Membros</h2>
       <div class="results__gallery">
         <img src="assets/img/op1.jpg" alt="Operação 1" class="results__img tilt-card">

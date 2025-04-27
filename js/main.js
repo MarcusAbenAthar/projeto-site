@@ -84,4 +84,28 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(ripple);
     ripple.addEventListener('animationend', () => ripple.remove());
   }, 500);
+
+  // === SCROLL REVEAL ===
+  const revealEls = document.querySelectorAll('.revealable');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // === THEME TOGGLE ===
+  const themeToggle = document.querySelector('.theme-toggle');
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme') || root.getAttribute('data-theme');
+  const apply = theme => {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+  };
+  apply(stored);
+  themeToggle.addEventListener('click', () => apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
 });
