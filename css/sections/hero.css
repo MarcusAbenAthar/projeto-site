@@ -259,6 +259,7 @@
 
 /* === HERO SUSPENSE EFFECT === */
 .hero__suspense {
+  text-shadow: 0 2px 24px var(--primary-color), 0 1px 0 #fafafa;
   display: block;
   opacity: 0;
   font-size: 1.2rem;
